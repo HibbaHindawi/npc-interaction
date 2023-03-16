@@ -9,6 +9,7 @@ public class Trigger : MonoBehaviour
     private GameObject triggeringNPC; //npc
     private bool istriggeringnpc; //npc
     public TMP_Text npcText;
+    public GameObject QuestMenu;
     private void Awake() {
 
     }
@@ -16,10 +17,8 @@ public class Trigger : MonoBehaviour
     void Update()
     {
         if(istriggeringnpc){ //npc dialog
-            print("player is triggering with " + triggeringNPC); //används för att kolla om trigger funkar
             if(Input.GetKeyDown(KeyCode.E)){
-                npcText.text = "Hello, My name is Bob, I have a quest for you. Would you like to take it? Y/N";
-                
+                QuestMenu.SetActive(true);
             }
         }
     }
@@ -37,6 +36,7 @@ public class Trigger : MonoBehaviour
     void OnTriggerExit(Collider other) {
         npcText.text = "Press E to talk";
         npcText.gameObject.SetActive(false);
+        QuestMenu.SetActive(false);
         istriggeringnpc = false;
         triggeringNPC = null;
     }
