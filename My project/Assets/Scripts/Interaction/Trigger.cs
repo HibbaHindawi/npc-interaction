@@ -10,10 +10,6 @@ public class Trigger : MonoBehaviour
     private bool istriggeringnpc; //npc
     public TMP_Text npcText;
     public GameObject QuestMenu;
-    private void Awake() {
-
-    }
-
     void Update()
     {
         if(istriggeringnpc){ //npc dialog
@@ -29,7 +25,7 @@ public class Trigger : MonoBehaviour
             npcText.gameObject.SetActive(true);
         }
         if(other.tag == "Coin"){
-            Pointsystem.Points();
+            Quest1.Points();
             Destroy(other.gameObject);
         }
     }

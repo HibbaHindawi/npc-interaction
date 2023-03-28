@@ -4,7 +4,6 @@ using UnityEngine;
  
 public class PlayerMovement : MonoBehaviour {
     private Rigidbody rb;
-    public Transform transform;
     public Camera camera;
     public CapsuleCollider col;
 
