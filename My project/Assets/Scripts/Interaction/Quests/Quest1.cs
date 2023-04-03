@@ -7,26 +7,35 @@ using UnityEngine.UI;
 public class Quest1 : MonoBehaviour
 {
     static int points;
-    public int totalpoints = 20;
     public TMP_Text Coin;
     public bool enabled;
     public Button Quest1Button;
+
+    public Slider Slider;
+    public int maxPoints = 20;
+    public GameObject PointsBar;
+    public Image img;
     void Start()
     {
         Coin.gameObject.SetActive(false);
         enabled = false;
+        SetMaxPoints(maxPoints);
+        Slider.value = 0;
     }
 
     void Update()
     {
         if(enabled){
+            PointsBar.gameObject.SetActive(true);
             Coin.gameObject.SetActive(true);
-            Coin.text = "Points: "+ points;
-        }
-        if(points == totalpoints){
+            Coin.text = "Points: "+ points + "/ 20";
+            SetPoint(points);
+            if(points == maxPoints){
             enabled = false;
-            
-        }      
+            PointsBar.SetActive(false);
+            img.color = Color.green;
+            } 
+        }    
     }
 
     public static void Points(){
@@ -34,5 +43,12 @@ public class Quest1 : MonoBehaviour
     }
     public void ActivateQuest(){
         enabled = true;
+    }
+
+    public void SetMaxPoints(int point){
+        Slider.maxValue = point;
+    }
+    public void SetPoint(int point){
+        Slider.value = point;
     }
 }
