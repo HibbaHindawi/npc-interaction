@@ -7,7 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public GameObject coinPrefab;
     public GameObject coin;
+    public GameObject enemy;
+    public GameObject enemyPrefab;
     public Quest1 quest1;
+    public Quest2 quest2;
     void Start()
     {
         
@@ -22,6 +25,20 @@ public class GameManager : MonoBehaviour
                 position.x = Random.Range(-13f, 13f);
                 position.z = Random.Range(-13f, 13f);
                 coin.transform.position = position;
+            }
+        }
+        if(quest2 == null) return;
+        if(quest2.enabled){
+            if(enemy == null){ //skapar en fiende i en slumpmässig position
+                for (int i = 0; i < 3; i++)
+                {
+                enemy = Instantiate(enemyPrefab);
+                Vector3 position = Vector3.one;
+                position.x = Random.Range(-13f, 13f);
+                position.z = Random.Range(-13f, 13f);
+                enemy.transform.position = position;
+                i++;
+                }
             }
         }
     }

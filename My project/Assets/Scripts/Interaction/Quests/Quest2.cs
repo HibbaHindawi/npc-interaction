@@ -17,7 +17,9 @@ public class Quest2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(enabled){
+            
+        }
     }
     public void ActivateQuest(){
         enabled = true;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -345,6 +345,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1215507246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7030548476871104426, guid: 4261c1d41b903de4080d25d88405f604, type: 3}
+  m_PrefabInstance: {fileID: 6453761607922373822}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1215507255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215507246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d01fbeaed66b284fb08a94a72966352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyscript: {fileID: -1215081072754427732, guid: 270df48115d10e14e9ca4b0a6447c23b, type: 3}
 --- !u!114 &1230912053 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1433339365041847159, guid: 4cda06f891edefd48bfebf0f1f3c25c8, type: 3}
@@ -394,6 +412,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 160862214}
+    - target: {fileID: 1433339363757850639, guid: 4cda06f891edefd48bfebf0f1f3c25c8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 83.7
+      objectReference: {fileID: 0}
     - target: {fileID: 1433339364564438277, guid: 4cda06f891edefd48bfebf0f1f3c25c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -486,6 +508,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1433339365255470556, guid: 4cda06f891edefd48bfebf0f1f3c25c8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cda06f891edefd48bfebf0f1f3c25c8, type: 3}
 --- !u!1001 &5646943905178160582
@@ -515,6 +541,14 @@ PrefabInstance:
       propertyPath: Quest1Button
       value: 
       objectReference: {fileID: 98959690}
+    - target: {fileID: 5646943905051385282, guid: bd5678005dc68824d924a1b387bf7df7, type: 3}
+      propertyPath: quest2
+      value: 
+      objectReference: {fileID: 160862213}
+    - target: {fileID: 5646943905051385282, guid: bd5678005dc68824d924a1b387bf7df7, type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 589815707081262166, guid: 270df48115d10e14e9ca4b0a6447c23b, type: 3}
     - target: {fileID: 5646943905051385283, guid: bd5678005dc68824d924a1b387bf7df7, type: 3}
       propertyPath: Quest2Button
       value: 
