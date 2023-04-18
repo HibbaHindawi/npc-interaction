@@ -14,10 +14,16 @@ public class EnemyScript : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter(Collider other) {
+        if((other.tag == "Sword")){
+            TakeDamage(10);
+            Debug.Log(currentHealth);
+        }
+    }
     public void TakeDamage(int amount){
         currentHealth -= amount;
-        Debug.Log(currentHealth);
         if(currentHealth <= 0){
+            Quest2.Kills();
             Destroy(gameObject);
         }
     }

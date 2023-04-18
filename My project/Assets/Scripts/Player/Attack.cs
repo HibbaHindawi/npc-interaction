@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    public EnemyScript enemyscript;
-    // Start is called before the first frame update
+    public GameObject Sword;
+    public BoxCollider Collider;
     void Start()
     {
-        
+        Collider.GetComponent<BoxCollider>().enabled = false;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
-    }
-    private void OnTriggerEnter(Collider other) {
-        if((other.tag == "Enemy") && (Input.GetKeyDown(KeyCode.Mouse0))){
-            Debug.Log("is Colliding");
-            enemyscript.TakeDamage(20);
+        if(Input.GetMouseButtonDown(0)){
+            StartCoroutine(SwordSwing());
         }
+    }
+    IEnumerator SwordSwing(){
+        Collider.enabled = true;
+        Sword.GetComponent<Animator>().Play("AttackAnimation");
+        yield return new WaitForSeconds(1.0f);
+        Sword.GetComponent<Animator>().Play("New State");
+        Collider.enabled = false;
     }
 }
