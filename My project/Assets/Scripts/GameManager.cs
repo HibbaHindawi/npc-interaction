@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject coinPrefab;
+    public GameObject coinPrefab; //detta säger till vilket objekt som ska skapas
     public GameObject coin;
+
     public GameObject enemy;
     public GameObject enemyPrefab;
+
+    public GameObject item;
+
     public Quest1 quest1;
     public Quest2 quest2;
+    public Quest3 quest3;
     void Start()
     {
         
@@ -40,6 +45,10 @@ public class GameManager : MonoBehaviour
                 i++;
                 }
             }
+        }
+        if(quest3 == null) return;
+        if(quest3.enabled){
+            item.gameObject.SetActive(true);
         }
     }
 }

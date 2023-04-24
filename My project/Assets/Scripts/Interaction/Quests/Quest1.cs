@@ -31,9 +31,9 @@ public class Quest1 : MonoBehaviour
             Coin.text = "Points: "+ points + "/ 20";
             SetPoint(points);
             if(points == maxPoints){
-            enabled = false;
-            PointsBar.SetActive(false);
-            img.color = Color.green;
+                enabled = false;
+                PointsBar.SetActive(false);
+                img.color = Color.green;
             } 
         }    
     }

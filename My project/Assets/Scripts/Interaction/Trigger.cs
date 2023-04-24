@@ -28,6 +28,11 @@ public class Trigger : MonoBehaviour
             Quest1.Points();
             Destroy(other.gameObject);
         }
+        if (other.tag == "PickupItem")
+        {
+            Quest3.Item();
+            Destroy(other.gameObject);
+        }
     }
     void OnTriggerExit(Collider other) {
         npcText.text = "Press E to talk";
