@@ -15,6 +15,7 @@ public class Quest2 : MonoBehaviour
     public int maxKills = 25;
     public GameObject EnemyBar;
     public Image img2;
+    public GameObject QComplete;
     void Start()
     {
         enabled = false;
@@ -29,10 +30,13 @@ public class Quest2 : MonoBehaviour
             EnemyCounter.text = "Kills: "+ kills + "/ 25";
             SetKills(kills);
             if(kills == maxKills){
+            StartCoroutine(Complete());
             enabled = false;
             EnemyBar.SetActive(false);
             img2.color = Color.green;
-            } 
+            }
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked; 
         }    
     }
 
@@ -48,5 +52,10 @@ public class Quest2 : MonoBehaviour
     }
     public void SetKills(int kill){
         Slider2.value = kill;
+    }
+    IEnumerator Complete(){
+        QComplete.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        QComplete.gameObject.SetActive(false);
     }
 }

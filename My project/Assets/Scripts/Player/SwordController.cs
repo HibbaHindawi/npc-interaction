@@ -33,7 +33,6 @@ public class SwordController : MonoBehaviour {
         xAxisRot = Mathf.Clamp(value: xAxisRot, min: -clampAngle, max: clampAngle * 3);
 
         Vector3 newPos =target.transform.position - (transform.forward * targetDistance);
-        Debug.Log(newPos +"  "+ transform.localPosition);
         newPos.y += 0.18f;
         newPos.y = transform.position.y;
         transform.position = newPos;

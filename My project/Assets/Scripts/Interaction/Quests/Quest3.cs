@@ -15,6 +15,7 @@ public class Quest3 : MonoBehaviour
     public int maxItems = 3;
     public GameObject PickupBar;
     public Image img3;
+    public GameObject QComplete;
     void Start()
     {
         Itemtext.gameObject.SetActive(false);
@@ -30,10 +31,13 @@ public class Quest3 : MonoBehaviour
             Itemtext.text = "Items: " + Items + "/ 3";
             SetItems(Items);
             if(Items == maxItems){
+                StartCoroutine(Complete());
                 enabled = false;
                 PickupBar.SetActive(false);
                 img3.color = Color.green;
-            } 
+            }
+            Cursor.visible = false; 
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public static void Item(){
@@ -47,5 +51,10 @@ public class Quest3 : MonoBehaviour
     }
     public void SetItems(int Item){
         Slider.value = Item;
+    }
+    IEnumerator Complete(){
+        QComplete.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        QComplete.gameObject.SetActive(false);
     }
 }

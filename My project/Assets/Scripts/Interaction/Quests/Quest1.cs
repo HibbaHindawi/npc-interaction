@@ -10,6 +10,7 @@ public class Quest1 : MonoBehaviour
     public TMP_Text Coin;
     public bool enabled;
     public Button Quest1Button;
+    public GameObject QComplete;
 
     public Slider Slider;
     public int maxPoints = 20;
@@ -31,10 +32,13 @@ public class Quest1 : MonoBehaviour
             Coin.text = "Points: "+ points + "/ 20";
             SetPoint(points);
             if(points == maxPoints){
+                StartCoroutine(Complete());
                 enabled = false;
                 PointsBar.SetActive(false);
                 img.color = Color.green;
-            } 
+            }
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }    
     }
 
@@ -50,5 +54,10 @@ public class Quest1 : MonoBehaviour
     }
     public void SetPoint(int point){
         Slider.value = point;
+    }
+    IEnumerator Complete(){
+        QComplete.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        QComplete.gameObject.SetActive(false);
     }
 }
